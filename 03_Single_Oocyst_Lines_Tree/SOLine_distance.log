@@ -1,0 +1,30 @@
+PLINK v1.90b6.24 64-bit (6 Jun 2021)
+Options in effect:
+  --allow-extra-chr
+  --distance square ibs
+  --double-id
+  --out SOLine_distance
+  --vcf SOLine_dip_Marker_1065.vcf
+
+Hostname: compute-0-0
+Working directory: /share/home/hty/work/IId-cross-Single-Oocyst-24-10-01/tree-dip-26-02-10
+Start time: Thu Feb 12 17:58:08 2026
+
+Random number seed: 1770890288
+1546249 MB RAM detected; reserving 773124 MB for main workspace.
+--vcf: SOLine_distance-temporary.bed + SOLine_distance-temporary.bim +
+SOLine_distance-temporary.fam written.
+1065 variants loaded from .bim file.
+49 people (0 males, 0 females, 49 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to SOLine_distance.nosex .
+Using up to 191 threads (change this with --threads).
+Before main variant filters, 49 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.999713.
+1065 variants and 49 people pass filters and QC.
+Note: No phenotypes present.
+Distance matrix calculation complete.
+IDs written to SOLine_distance.mibs.id .
+IBS matrix written to SOLine_distance.mibs .
+
+End time: Thu Feb 12 17:58:08 2026
