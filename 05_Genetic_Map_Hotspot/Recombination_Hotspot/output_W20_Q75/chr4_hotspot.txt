@@ -1,0 +1,3 @@
+Hotspot Start	 Hotspot Stop	 LR 	 Region Start	 Region Stop
+216867 	 218867 	 60.73815 	 216867 	 218867 
+221867 	 223867 	 20.34523 	 221867 	 228867 
