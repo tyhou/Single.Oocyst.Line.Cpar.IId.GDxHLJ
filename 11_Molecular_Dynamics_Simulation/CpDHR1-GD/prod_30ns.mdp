@@ -1,0 +1,51 @@
+title                   = Production MD 30ns    ; 
+integrator              = md
+dt                      = 0.002
+; ========== 核心修改：总步数 ==========
+nsteps                  = 15000000     ; 30 ns = 30000 ps / 0.002 ps  ; 
+
+; ========== 输出频率调整 ==========
+nstxout-compressed      = 50000        ; 每100 ps (50000*0.002) 保存一帧完整轨迹
+nstxout                 = 0
+nstvout                 = 0
+nstfout                 = 0
+nstcalcenergy           = 100
+nstenergy               = 5000         ; 每10 ps 保存能量数据
+nstlog                  = 1000
+
+; ========== 新增：检查点设置 ==========
+nstcheckpoint           = 50000        ; 每100 ps 保存检查点，便于续跑
+
+; ========== 新增：随机种子 (关键!) ==========
+; 在三个平行的目录中，将此值分别改为 -1, -2, -3 等不同的负整数
+gen_seed                = -1
+
+;
+cutoff-scheme           = Verlet
+nstlist                 = 20
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw_switch             = 1.0
+rvdw                    = 1.2
+rlist                   = 1.2
+rcoulomb                = 1.2
+coulombtype             = PME
+;
+tcoupl                  = v-rescale
+tc_grps                 = SOLU SOLV      ; 请确认index.ndx中存在此分组名
+tau_t                   = 1.0 1.0
+ref_t                   = 310 310
+;
+pcoupl                  = Parrinello-Rahman
+pcoupltype              = isotropic
+tau_p                   = 5.0
+compressibility         = 4.5e-5
+ref_p                   = 1.0
+;
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+continuation            = yes            ; 从平衡阶段继续，正确读取初始速度
+;
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = SOLU SOLV
