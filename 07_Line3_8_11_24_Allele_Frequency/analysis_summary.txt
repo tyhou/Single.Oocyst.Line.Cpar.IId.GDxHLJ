@@ -1,0 +1,7 @@
+SNP analysis summary
+Generated: 1772090476 
+
+Total SNPs: 1065 
+Significant (FDR < 0.05): 1036 
+freq_diff > -0.5: 672 (significant: 643 )
+freq_diff <= -0.5: 393 (significant: 393 )
